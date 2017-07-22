@@ -46,7 +46,7 @@ dependencies {
     //调试框架
     compile rootProject.ext.support.stetho
     compile rootProject.ext.support.stetho_okhttp3
-    //测试3
+    //测试5
     //compile rootProject.ext.support.rxjava
     //compile rootProject.ext.support.rxandroid
 
