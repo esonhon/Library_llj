@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true"><shape>
+            <corners android:radius="5dp" />
+
+            <solid android:color="#b31a1a" />
+        </shape></item>
+    <item><shape>
+
+            <!-- 档期查询详情-“已订满”标签显示背景 -->
+            <corners android:radius="5dp" />
+
+            <solid android:color="#00b4ff" />
+        </shape></item>
+
+</selector>

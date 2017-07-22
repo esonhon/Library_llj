@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CommonFootbar">
+        <attr name="footbar_text1" format="reference|string" />
+        <attr name="footbar_text2" format="reference|string" />
+        <attr name="footbar_text3" format="reference|string" />
+        <attr name="footbar_text4" format="reference|string" />
+        <attr name="footbar_image_background1" format="reference|color" />
+        <attr name="footbar_image_background2" format="reference|color" />
+        <attr name="footbar_image_background3" format="reference|color" />
+        <attr name="footbar_image_background4" format="reference|color" />
+        <attr name="footbar_image_marginTop" format="reference|dimension" />
+        <attr name="footbar_image_marginBottom" format="reference|dimension" />
+        <attr name="footbar_image_width" format="reference|dimension" />
+        <attr name="footbar_image_height" format="reference|dimension" />
+        <attr name="footbar_item_background1" format="reference|color" />
+        <attr name="footbar_item_background2" format="reference|color" />
+        <attr name="footbar_item_background3" format="reference|color" />
+        <attr name="footbar_item_background4" format="reference|color" />
+        <attr name="footbar_text_size" format="reference|dimension" />
+        <attr name="footbar_text_color" format="reference|color" />
+        <attr name="footbar_gravity">
+
+            <!-- Push object to the top of its container, not changing its size. -->
+            <flag name="top" value="0x30" />
+            <!-- Push object to the bottom of its container, not changing its size. -->
+            <flag name="bottom" value="0x50" />
+            <!-- Push object to the left of its container, not changing its size. -->
+            <flag name="left" value="0x03" />
+            <!-- Push object to the right of its container, not changing its size. -->
+            <flag name="right" value="0x05" />
+            <!-- Place object in the vertical center of its container, not changing its size. -->
+            <flag name="center_vertical" value="0x10" />
+            <!-- Grow the vertical size of the object if needed so it completely fills its container. -->
+            <flag name="fill_vertical" value="0x70" />
+            <!-- Place object in the horizontal center of its container, not changing its size. -->
+            <flag name="center_horizontal" value="0x01" />
+            <!-- Grow the horizontal size of the object if needed so it completely fills its container. -->
+            <flag name="fill_horizontal" value="0x07" />
+            <!-- Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. -->
+            <flag name="center" value="0x11" />
+            <!-- Grow the horizontal and vertical size of the object if needed so it completely fills its container. -->
+            <flag name="fill" value="0x77" />
+            <flag name="clip_horizontal" value="0x08" />
+            <!-- Push object to the beginning of its container, not changing its size. -->
+            <flag name="start" value="0x00800003" />
+            <!-- Push object to the end of its container, not changing its size. -->
+            <flag name="end" value="0x00800005" />
+        </attr>
+    </declare-styleable>
+
+</resources>

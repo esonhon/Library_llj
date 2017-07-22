@@ -1,0 +1,92 @@
+apply plugin: 'com.android.library'
+dependencies {
+    compile fileTree(include: '*.jar', dir: 'libs')
+    compile 'com.android.support:multidex:1.0.1'
+    //compile 'com.daimajia.easing:library:1.0.1@aar'
+    //compile 'com.daimajia.androidanimations:library:1.1.3@aar'
+    //compile 'org.lucasr.twowayview:core:1.0.0-SNAPSHOT@aar'
+    //    compile 'org.lucasr.twowayview:layouts:1.0.0-SNAPSHOT@aar'
+    //google官方支持库
+    compile rootProject.ext.support.design
+    compile rootProject.ext.support.appcompat_v7
+    compile rootProject.ext.support.recyclerView_v7
+    compile rootProject.ext.support.cardView_v7
+    //butterknife注解
+    compile rootProject.ext.support.butterknife840
+    //下拉刷新
+    compile rootProject.ext.support.ultra_ptr
+    //图片加载
+    compile rootProject.ext.support.fresco
+    compile rootProject.ext.support.animated_gif
+    compile rootProject.ext.support.animated_webp
+    compile rootProject.ext.support.webpsupport
+    //网络框架
+    compile rootProject.ext.support.okhttp3
+    //时间总线
+    compile rootProject.ext.support.eventbus
+    //通用适配器
+    compile rootProject.ext.support.universalAdapter
+    //json解析
+    compile rootProject.ext.support.gson
+    //滤镜
+    compile rootProject.ext.support.gpuimage
+    //悬停recycleView
+    compile rootProject.ext.support.superslim
+    //悬浮菜单
+    compile rootProject.ext.support.arclayout
+    //工具类
+    compile rootProject.ext.support.commons_lang3
+    //阿里云sdk
+    compile rootProject.ext.support.oss_android_sdk
+    //rebound弹性库
+    compile rootProject.ext.support.rebound
+    //内存捡漏
+    debugCompile rootProject.ext.support.leakcanaryDebug
+    releaseCompile rootProject.ext.support.leakcanaryRelease
+    //调试框架
+    compile rootProject.ext.support.stetho
+    compile rootProject.ext.support.stetho_okhttp3
+    //
+//    compile rootProject.ext.support.rxjava
+//    compile rootProject.ext.support.rxandroid
+
+}
+
+android {
+    publishNonDefault true
+
+    compileSdkVersion project.ANDROID_BUILD_COMPILE_SDK_VERSION as int
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
+    //useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        minSdkVersion project.ANDROID_BUILD_MIN_SDK_VERSION as int
+        targetSdkVersion project.ANDROID_BUILD_TARGET_SDK_VERSION as int
+        //下面这个只能用22的build tools编译
+        //renderscriptTargetApi 20
+        //renderscriptSupportModeEnabled true
+        multiDexEnabled true
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+}

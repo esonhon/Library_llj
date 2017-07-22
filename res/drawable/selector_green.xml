@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true"><shape>
+            <corners android:radius="5dp" />
+
+            <solid android:color="#09ba7c" />
+        </shape></item>
+    <item><shape>
+
+            <!-- 档期查询详情-“不可预订”标签背景 -->
+            <corners android:radius="5dp" />
+
+            <solid android:color="#09ca87" />
+        </shape></item>
+
+</selector>
