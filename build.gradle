@@ -47,8 +47,8 @@ dependencies {
     compile rootProject.ext.support.stetho
     compile rootProject.ext.support.stetho_okhttp3
     //
-//    compile rootProject.ext.support.rxjava
-//    compile rootProject.ext.support.rxandroid
+    //compile rootProject.ext.support.rxjava
+    //compile rootProject.ext.support.rxandroid
 
 }
 
