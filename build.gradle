@@ -44,7 +44,6 @@ dependencies {
     debugCompile rootProject.ext.support.leakcanaryDebug
     releaseCompile rootProject.ext.support.leakcanaryRelease
     //调试框架
-
     compile rootProject.ext.support.stetho
     compile rootProject.ext.support.stetho_okhttp3
     //
