@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -165,7 +164,7 @@ public abstract class BaseFragment extends Fragment {
             mIsVisible = true;
             //当使用viewPager进行预加载fragment的时候,先调用setUserVisibleHint,后调用onViewCreated
             //所以刚开始是mIsInit=true,mIsVisible为false
-            if ((mIsInit) && (mIsVisible) && !isFinishLazyLoad())
+            if (hasInitAndVisible() && !isFinishLazyLoad())
                 onLazyLoad();
         } else {
             mIsVisible = false;
@@ -177,10 +176,16 @@ public abstract class BaseFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         // 已经完成初始化
         mIsInit = true;
-        if (mIsVisible)
-            onLazyLoad();
         //
         initViews(view, savedInstanceState);
+        //
+        if (hasInitAndVisible()) {
+            onLazyLoad();
+        }
+    }
+
+    private boolean hasInitAndVisible() {
+        return mIsInit && mIsVisible;
     }
 
 

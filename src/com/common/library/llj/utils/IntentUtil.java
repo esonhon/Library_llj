@@ -23,4 +23,14 @@ public class IntentUtil {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
+
+    public static void dial(Context context, String phone) {
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phone));
+        context.startActivity(intent);
+    }
+
+    public static void call(Context context, String phone) {
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phone));
+        context.startActivity(intent);
+    }
 }
