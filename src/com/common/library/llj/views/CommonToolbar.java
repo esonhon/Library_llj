@@ -182,9 +182,7 @@ public class CommonToolbar extends LinearLayout {
      * @param res
      */
     public void setLeftDrawable(@DrawableRes int res) {
-        if (res != 0) {
             getLeftTextView().setCompoundDrawablesWithIntrinsicBounds(res, 0, 0, 0);
-        }
     }
 
     /**
