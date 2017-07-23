@@ -60,6 +60,13 @@ public abstract class ListBasedAdapterWrap<Item, Holder extends ViewHolder> exte
         return getItemsList();
     }
 
+    public Item getLast() {
+        if (!ListUtil.isEmpty(getItemsList())) {
+            getItemsList().get(getItemsList().size() - 1);
+        }
+        return null;
+    }
+
     @Override
     public void clear() {
         if (size() != 0)
@@ -90,6 +97,7 @@ public abstract class ListBasedAdapterWrap<Item, Holder extends ViewHolder> exte
             }
         };
     }
+
     /**
      * 置是否加载完毕
      *
