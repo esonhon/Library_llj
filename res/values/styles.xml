@@ -91,7 +91,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1px</item>
         <item name="android:background">@color/gray</item>
-    </style>
+    </style>  <!-- 普通的横线 -->
     <!-- 普通的竖线 -->
     <style name="common_line_v">
         <item name="android:layout_width">1px</item>
