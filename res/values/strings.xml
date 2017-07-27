@@ -37,6 +37,7 @@
     <string name="common_register">注册</string>
     <string name="common_upgrade">升级</string>
     <string name="common_pay_fail">购买失败，请重试！</string>
+    <string name="common_setting">设置</string>
 
     <string name="is_downing">正在下载</string>
     <string name="loading">加载中...</string>
