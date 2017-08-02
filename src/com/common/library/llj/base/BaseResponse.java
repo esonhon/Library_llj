@@ -25,6 +25,8 @@ public class BaseResponse<T> {
     public static final int REDEEMCODE_ERROR          = 147;// 请输入有效的兑换码
     public static final int REDEEMCODE_USED           = 148;// 当前兑换码已使用
     public static final int MULTI_LOGIN               = 157;// 多端登录
+    public static final int EMAIL_PWD_ERROR           = 163;// 邮箱密码错误
+    public static final int EMAIL_NOT_REGISTER        = 164;// 邮箱未注册
 
 
     public T getData() {
