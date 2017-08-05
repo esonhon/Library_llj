@@ -8,8 +8,6 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -72,7 +70,7 @@ public class AutoScrollViewPager extends ViewPager {
                         this.removeMessages(SCROLL_WHAT);
                     } else {
                         AutoScrollViewPager pager = this.autoScrollViewPager.get();
-                        if (pager != null) {
+                        if (pager != null && pager.getAdapter() != null) {
                             pager.scrollOnce();
                             pager.sendScrollMessage(pager.interval + pager.scroller.getDuration());
                         }
