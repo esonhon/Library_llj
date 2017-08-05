@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 
 import com.common.library.llj.base.BaseApplication;
@@ -21,6 +22,7 @@ import java.util.UUID;
  */
 public class ImagePickHelper extends ImageHelper {
     protected Activity mActivity;
+    protected Fragment mFragment;
 
     public void pickImage(Activity activity) {
         mActivity = activity;
@@ -40,8 +42,31 @@ public class ImagePickHelper extends ImageHelper {
         realPickImage(activity);
     }
 
+    public void pickImage(Fragment fragment) {
+        mFragment = fragment;
+        mActivity = fragment.getActivity();
+//        if (Build.VERSION.SDK_INT >= 16) {
+//            if (ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+//                //申请WRITE_EXTERNAL_STORAGE权限
+//                mActivityWeakReference = new WeakReference<>(activity);
+//                ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+//                        READ_EXTERNAL_STORAGE_REQUEST_CODE);
+//
+//            } else {
+//                doSelect(activity);
+//            }
+//        } else {
+//            doSelect(activity);
+//        }
+        realPickImage(fragment);
+    }
+
     private void realPickImage(Activity activity) {
         activity.startActivityForResult(createIntent(), CHOOSE_PHOTO_FROM_ALBUM);
+    }
+
+    private void realPickImage(Fragment fragment) {
+        fragment.startActivityForResult(createIntent(), CHOOSE_PHOTO_FROM_ALBUM);
     }
 
     @Override
@@ -49,6 +74,10 @@ public class ImagePickHelper extends ImageHelper {
         return mActivity;
     }
 
+    @Override
+    public Fragment getFragment() {
+        return mFragment;
+    }
 
     @Override
     protected Intent createIntent() {

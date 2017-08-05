@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.support.v4.app.Fragment;
 
 import com.common.library.llj.base.BaseApplication;
 
@@ -20,13 +21,17 @@ import java.util.UUID;
  * Created by liulj on 15/12/3.
  */
 public abstract class ImageHelper {
-    protected static final int CHOOSE_PHOTO_FROM_CAMERA = 10001;
-    protected static final int CHOOSE_PHOTO_FROM_ALBUM = 10002;
+    protected static final int CHOOSE_PHOTO_FROM_CAMERA      = 10001;
+    protected static final int CHOOSE_PHOTO_FROM_ALBUM       = 10002;
     protected static final int CHOOSE_PHOTO_FROM_SYSTEM_CROP = 10003;
     protected String mCropImagePath;//剪切后存放的位置
     protected int mQuality = 100;
 
     protected Activity getActivity() {
+        return null;
+    }
+
+    protected Fragment getFragment() {
         return null;
     }
 
@@ -124,6 +129,10 @@ public abstract class ImageHelper {
         // 剪切返回，头像存放的路径
         mCropImagePath = BaseApplication.PIC_PATH + File.separator + UUID.randomUUID().toString() + "cropImage.png";
         intent.putExtra("output", Uri.fromFile(new File(mCropImagePath))); // 专入目标文件
-        getActivity().startActivityForResult(intent, CHOOSE_PHOTO_FROM_SYSTEM_CROP);
+        if (getFragment() != null) {
+            getFragment().startActivityForResult(intent, CHOOSE_PHOTO_FROM_SYSTEM_CROP);
+        } else {
+            getActivity().startActivityForResult(intent, CHOOSE_PHOTO_FROM_SYSTEM_CROP);
+        }
     }
 }

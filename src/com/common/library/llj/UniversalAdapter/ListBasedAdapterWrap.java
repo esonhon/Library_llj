@@ -62,7 +62,7 @@ public abstract class ListBasedAdapterWrap<Item, Holder extends ViewHolder> exte
 
     public Item getLast() {
         if (!ListUtil.isEmpty(getItemsList())) {
-            getItemsList().get(getItemsList().size() - 1);
+            return getItemsList().get(getItemsList().size() - 1);
         }
         return null;
     }
