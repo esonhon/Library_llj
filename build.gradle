@@ -25,7 +25,8 @@ dependencies {
     //时间总线
     compile rootProject.ext.support.eventbus
     //通用适配器
-    compile rootProject.ext.support.universalAdapter
+//    compile rootProject.ext.support.universalAdapter
+    compile project(':lib-universalAdapter')
     //json解析
     compile rootProject.ext.support.gson
     //滤镜
