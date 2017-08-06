@@ -21,15 +21,11 @@ public abstract class BaseDialog extends Dialog {
     public BaseDialog(Context context) {
         super(context);
         mContext = context;
-        bindViews();
-        initViews();
     }
 
     public BaseDialog(Context context, int theme) {
         super(context, theme);
         mContext = context;
-        bindViews();
-        initViews();
     }
 
     private void bindViews() {
@@ -41,16 +37,15 @@ public abstract class BaseDialog extends Dialog {
     protected final void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // 第一次show的时候会调用该方法
+        bindViews();
+        initViews();
+
         setWindowParam();
-        performCreate(savedInstanceState);
     }
 
     protected abstract int getLayoutId();
 
     protected void initViews() {
-    }
-
-    protected void performCreate(Bundle savedInstanceState) {
     }
 
     protected abstract void setWindowParam();

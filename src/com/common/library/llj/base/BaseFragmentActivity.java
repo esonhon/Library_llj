@@ -26,12 +26,15 @@ import com.common.library.llj.utils.LogUtil;
 import com.common.library.llj.utils.NetWorkUtil;
 import com.common.library.llj.utils.ToastUtil;
 import com.common.library.llj.views.LoadingDialog;
+import com.llj.adapter.Delegate;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 
@@ -54,6 +57,21 @@ public abstract class BaseFragmentActivity extends AppCompatActivity implements 
     private static final long CLICK_INTERVAL = 500;//点击时间间隔
     private              long mLastClickTime = 0;//最后点击的时间
 
+    //用作activity的回调给fragment
+    private List<Delegate<Integer>> mCallbackList;
+
+    public List<Delegate<Integer>> getCallbackList() {
+        return mCallbackList;
+    }
+
+    public void addCallback(Delegate<Integer> callback) {
+        if (mCallbackList == null) {
+            mCallbackList = new ArrayList<>();
+        }
+        if (callback != null) {
+            mCallbackList.add(callback);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

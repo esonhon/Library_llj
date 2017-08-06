@@ -14,10 +14,10 @@ import com.common.library.llj.utils.DisplayUtil;
 import com.common.library.llj.utils.LogUtil;
 import com.common.library.llj.utils.ToastUtil;
 import com.facebook.stetho.Stetho;
-import com.squareup.leakcanary.LeakCanary;
-//import com.squareup.leakcanary.LeakCanary;
 
 import java.io.File;
+
+//import com.squareup.leakcanary.LeakCanary;
 
 /**
  * 基类application
@@ -133,6 +133,7 @@ public abstract class BaseApplication extends Application {
      * okhttp的请求调试抓包
      */
     private void initStetho() {
+        LogUtil.LLJe("BuildConfig.DEBUG:" + BuildConfig.DEBUG);
         if (BuildConfig.DEBUG)
             Stetho.initialize(
                     Stetho.newInitializerBuilder(this)
@@ -152,14 +153,14 @@ public abstract class BaseApplication extends Application {
      * 检查内存溢出情况
      */
     private void initLeakCanary() {
-        if (BuildConfig.DEBUG){
+        if (BuildConfig.DEBUG) {
 //            if (LeakCanary.isInAnalyzerProcess(this)) {
-                // This process is dedicated to LeakCanary for heap analysis.
-                // You should not init your app in this process.
-                return;
-            }
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
 //            LeakCanary.install(this);
-            // Normal app init code...
+        // Normal app init code...
 //        }
     }
 
