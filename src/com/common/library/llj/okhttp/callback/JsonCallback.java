@@ -1,6 +1,5 @@
 package com.common.library.llj.okhttp.callback;
 
-import android.support.annotation.StringRes;
 import android.text.TextUtils;
 
 import com.common.library.llj.R;
@@ -42,7 +41,6 @@ public abstract class JsonCallback<C extends BaseResponse> extends BaseCallback<
 
     @Override
     public void onSuccessByOtherStatus(C response) {
-        super.onSuccessByOtherStatus(response);
         if (!TextUtils.isEmpty(response.getMessage()))
             ToastUtil.show(response.getMessage());
         else if (!TextUtils.isEmpty(response.getStatusInfo()))
@@ -51,7 +49,6 @@ public abstract class JsonCallback<C extends BaseResponse> extends BaseCallback<
 
     @Override
     public void onSuccessByOtherStatus(Response response, C myResponse) {
-        super.onSuccessByOtherStatus(response, myResponse);
         onSuccessByOtherStatus(myResponse);
     }
 

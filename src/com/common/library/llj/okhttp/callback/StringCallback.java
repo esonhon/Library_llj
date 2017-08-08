@@ -35,4 +35,14 @@ public abstract class StringCallback extends BaseCallback<String> {
     public void onFailure(Call call, Response response, Exception exception) {
 
     }
+
+    @Override
+    public void onSuccessByOtherStatus(Response response, String myResponse) {
+
+    }
+
+    @Override
+    public void onSuccessByOtherStatus(String response) {
+
+    }
 }

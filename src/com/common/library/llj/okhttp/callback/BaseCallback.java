@@ -3,7 +3,6 @@ package com.common.library.llj.okhttp.callback;
 import android.content.Context;
 import android.support.annotation.StringRes;
 
-import com.common.library.llj.R;
 import com.common.library.llj.okhttp.OkHttpUtils;
 import com.common.library.llj.okhttp.event.LoadingDialogEvent;
 import com.common.library.llj.utils.ToastUtil;
@@ -71,17 +70,6 @@ public abstract class BaseCallback<C> implements ResponseHandler<C>, ResponseDis
 
     @Override
     public void onStart(Request request) {
-
-    }
-
-
-    @Override
-    public void onSuccessByOtherStatus(C response) {
-
-    }
-
-    @Override
-    public void onSuccessByOtherStatus(Response response, C myResponse) {
 
     }
 
