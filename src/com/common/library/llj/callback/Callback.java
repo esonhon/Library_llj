@@ -9,4 +9,5 @@ package com.common.library.llj.callback;
 public interface Callback {
 
     void call();
+
 }
