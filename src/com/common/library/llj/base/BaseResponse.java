@@ -16,6 +16,8 @@ public class BaseResponse<T> {
     public static final int UPPER_LIMIT_CODE          = 103;//操作达到上限,比如签到次数,
     public static final int DUPLICAT_REQUEST          = 106;//重复请求错误吗
     public static final int NO_PERMISSION             = 107;//操作无权限
+    public static final int RELATION_WITH_SAME_PHONE  = 109;// "邀请不同关系的用户手机号重复"
+    public static final int RELATION_WITH_SAME_EMAIL  = 165;// "邀请不同关系的用户邮箱号重复"
     public static final int RELATION_ALREADY_EXIST    = 110;// 关系已经存在
     public static final int CHECK_OLD_PWD_INCORRECT   = 111;
     public static final int CHECK_PHONE_ALREADY_EXIST = 113;// 手机号重复
@@ -25,6 +27,8 @@ public class BaseResponse<T> {
     public static final int REDEEMCODE_ERROR          = 147;// 请输入有效的兑换码
     public static final int REDEEMCODE_USED           = 148;// 当前兑换码已使用
     public static final int MULTI_LOGIN               = 157;// 多端登录
+    public static final int EMAIL_PWD_ERROR           = 163;// 邮箱密码错误
+    public static final int EMAIL_NOT_REGISTER        = 164;// 邮箱未注册
 
 
     public T getData() {
