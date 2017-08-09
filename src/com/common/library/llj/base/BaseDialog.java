@@ -41,11 +41,15 @@ public abstract class BaseDialog extends Dialog {
         initViews();
 
         setWindowParam();
+        performCreate(savedInstanceState);
     }
 
     protected abstract int getLayoutId();
 
     protected void initViews() {
+    }
+
+    protected void performCreate(Bundle savedInstanceState) {
     }
 
     protected abstract void setWindowParam();
